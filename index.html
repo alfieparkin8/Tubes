@@ -1,11 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Underground Map</title>
+    <style>
+        #svg-container {
+            width: 100%; /* Adjust to your desired width */
+            height: 500px; /* Adjust to your desired height */
+            overflow: auto;
+        }
+    </style>
 </head>
 <body>
-    
+    <div id="svg-container">
+        <object id="svg-object" data="tube.svg" type="image/svg+xml"></object>
+    </div>
+
+    <script>
+        const svgContainer = document.getElementById("svg-container");
+        const svgObject = document.getElementById("svg-object");
+
+        // Add zoom functionality using the "wheel" event
+        svgContainer.addEventListener("wheel", (e) => {
+            e.preventDefault();
+            const scale = e.deltaY > 0 ? 0.9 : 1.1;
+            svgObject.contentDocument.documentElement.setAttribute("transform", `scale(${scale})`);
+        });
+    </script>
 </body>
 </html>
