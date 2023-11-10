@@ -1,0 +1,29 @@
+@font-face {
+    font-family: 'njfont';
+    src: url('njfont-bookbold-webfont.woff2') format('woff2'),
+         url('njfont-bookbold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body {
+    overflow: hidden;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#svg-container {
+    position: relative;
+    height: calc(100vh - 20px); /* Adjust margin-top as needed */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px; /* Adjust the margin to your desired value */
+}
+
+#svg-container object {
+    max-width: 100%;
+    max-height: 100%;
+}
