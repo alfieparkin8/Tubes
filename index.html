@@ -1,12 +1,54 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="style.css" type="text/css">
+	<link rel="stylesheet" href="style.css">
+    <title>Clickable SVG Example</title>
 </head>
 <body>
-  <script src="script.js"></script>
-  <div id="svg-container">
-    <object id="tube-map" type="image/svg+xml" data="tube.svg"></object>
-  </div>
+<object type="image/svg+xml" data="tube.svg" id="map"></object>	
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+        var mapObject = document.getElementById('map');
+
+        mapObject.addEventListener('load', function() {
+            var svgDoc = mapObject.contentDocument;
+
+            // Check if contentDocument is null
+            if (svgDoc) {
+                console.log('SVG document:', svgDoc);
+
+                // Now you can manipulate the SVG elements using standard DOM methods
+                var svgElement = svgDoc.getElementById('yourElementId');
+
+                if (svgElement) {
+                    console.log('SVG element:', svgElement);
+                    // Do something with svgElement
+                } else {
+                    console.error('SVG element not found');
+                }
+            } else {
+                console.error('Content document is null. Possible cross-origin issues or incorrect path to SVG file.');
+            }
+        });
+    });
+var modal = document.getElementById("myModal");
+var modalImg = document.getElementById("img01");
+var svgObject = document.getElementById("map");
+var svgFile = svgObject.contentDocument;
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+  modal.style.display = "none";
+}
+</script>
 </body>
 </html>
