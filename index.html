@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+fill: none;stroke: green;stroke-width:2.07;stroke-linejoin:round;fill: none;stroke: gray;stroke-width:2.07;stroke-linejoin:round;fill: none;stroke: gainsboro;stroke-width:2.07;stroke-linejoin:round;fill: none;stroke: g;stroke-width:2.07;stroke-linejoin:round;fill: none;stroke:#009DDC;stroke-width:2.07;stroke-linejoin:round;fill: non;stroke:#009DDC;stroke-width:2.07;stroke-linejoin:round;fill: nonw;stroke:#009DDC;stroke-width:2.07;stroke-linejoin:round;fill: none;stroke:#009DDC;stroke-width:2.07;stroke-linejoin:round;fill: navajowhite;stroke:#009DDC;stroke-width:2.07;stroke-linejoin:round;fill: n;stroke:#009DDC;stroke-width:2.07;stroke-linejoin:round;fill: ;stroke:#009DDC;stroke-width:2.07;stroke-linejoin:round;fill: gainsboro;stroke:#009DDC;stroke-width:2.07;stroke-linejoin:round;fill: gray;stroke:#009DDC;stroke-width:2.07;stroke-linejoin:round;fill: green;stroke:#009DDC;stroke-width:2.07;stroke-linejoin:round;fill: gree;stroke:#009DDC;stroke-width:2.07;stroke-linejoin:round;fill: greem;stroke:#009DDC;stroke-width:2.07;stroke-linejoin:round;fill: green;stroke:#009DDC;stroke-width:2.07;stroke-linejoin:round;fill: gray;stroke:#009DDC;stroke-width:2.07;stroke-linejoin:round;fill: gainsboro;stroke:#009DDC;stroke-width:2.07;stroke-linejoin:round;fill: g;stroke:#009DDC;stroke-width:2.07;stroke-linejoin:round;<!DOCTYPE html>
 <html lang="en">
 <head>
     <link rel="stylesheet" href="style.css">
@@ -2242,11 +2242,12 @@
         document.body.addEventListener('click', function(event) {
             const clickedElement = event.target;
             const immediateParent = clickedElement.parentNode;
-
+            const dontActivate = ["tube-lines","myModal","svg-container"]
+            const lines = ["bakerloo","central","circle","district","hammersmith","jubilee","metropolitan","northern","piccadilly","victoria","waterloo","elizabeth","thameslink"];
             // Check if the immediate parent has an id attribute
             const parentId = immediateParent.id;
             if(parentId){
-            if(parentId != "tube-lines" && parentId != "myModal" && parentId != "svg-container"){
+            if(!dontActivate.includes(parentId) && !lines.includes(parentId)){
                 const randomLetter = Math.random() < 0.5 ? 'a' : 'j';
                 console.log(parentId);
                 modal.style.display = "block";
