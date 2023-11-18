@@ -2123,7 +2123,7 @@ const modalImg = document.getElementById("img01");
 svgContainer.innerHTML = svgCode;
 
 const hideElements = (tubeLine) => {
-    const allElements = document.querySelectorAll(':not(#svg-container):not(#tube-lines):not(#border):not(#myModal):not(#img01)');
+    const allElements = document.querySelectorAll(':not(#tspan1):not(#svg-container):not(#tube-lines):not(#border):not(#myModal):not(#img01)');
 
     allElements.forEach(element => {
       const elementId = element.id;
@@ -2141,7 +2141,7 @@ const hideElements = (tubeLine) => {
 document.body.addEventListener('click', function (event) {
   const clickedElement = event.target;
   const immediateParent = clickedElement.parentNode;
-  const dontActivate = ["tube-lines", "myModal", "svg-container","key","img01"];
+  const dontActivate = ["tube-lines", "myModal", "svg-container","key","img01","text1"];
   const bakerlooLine = ["bakerloo","edgware-road", "marylebone", "baker-street", "regents-park", "oxford-circus", "piccadilly-circus", "charing-cross", "embankment", "waterloo-station", "lambeth-north", "elephant-and-castle"];
   const centralLine = ["central","notting-hill-gate","queensway","lancaster-gate","marble-arch","bond-street","oxford-circus","tottenham-court-road","holborn","chancery-lane","city-thameslink","st-pauls","bank","liverpool-street"];
   const circleLine = ["circle","edgware-road", "baker-street", "great-portland-street", "euston-square", "kings-x","kings-x-disabled-1","kings-x-disabled-2","kings-x-disabled-3", "bank","farringdon","farringdon-disabled-1","farringdon-disabled-2","barbican", "moorgate", "liverpool-street", "liverpool-street-disabled-2", "liverpool-street-disabled-3", "liverpool-street-disabled-4", "aldgate", "tower-hill", "monument", "cannon-street", "mansion-house", "blackfriars", "temple", "embankment", "westminster", "st-james-park", "victoria-station", "sloane-square", "south-kensington", "gloucester-road", "high-street-kensington", "notting-hill-gate", "bayswater", "paddington"];
@@ -2157,7 +2157,6 @@ document.body.addEventListener('click', function (event) {
   const thamesLink = ["thameslink","elephant-and-castle","london-bridge","city-thameslink","farringdon","farringdon-disabled-1","farringdon-disabled-2","kings-x","kings-x-disabled-1","kings-x-disabled-2","kings-x-disabled-3"];
   const lines = ["bakerloo", "central", "circle", "district", "hammersmith", "jubilee", "metropolitan", "northern", "piccadilly", "victoria", "waterloo", "elizabeth", "thameslink"];
   const parentId = immediateParent.id;
-
   if (parentId) {
     if (parentId === "bakerloo") {
    hideElements(bakerlooLine);   
