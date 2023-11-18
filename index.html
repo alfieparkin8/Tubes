@@ -74,7 +74,17 @@
    d="m 123.4,268.5 -3.8,-3.8 c -1.1,-1.1 -2.1,-3.4 -2.1,-5 l 0.2,-106.1 v -0.8 -26 c 0,-1.6 0.9,-3.8 2,-4.9 l 10.3,-10.3 1.2,-1.2 44.5,-44.4 1.1,-1.2 15,-15 c 1.1,-1.1 3.4,-2 4.9,-2 h 20.5" />&#10;	<text
    transform="translate(371.2976,205.9342)"
    class="st6 st3 st7"
-   id="text6">Victoria</text>&#10;</g>&#10;<g
+   id="text6">Victoria</text>&#10;</g>&#10;<text
+   xml:space="preserve"
+   style="font-size:5.33333px;font-family:njfont;-inkscape-font-specification:'njfont, Normal';fill:#204492;fill-opacity:1"
+   x="103.02348"
+   y="24.190434"
+   id="underground-title"><tspan
+     sodipodi:role="line"
+     id="underground-title-text"
+     x="103.02348"
+     y="24.190434"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.3333px;font-family:njfont;-inkscape-font-specification:'njfont, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#204492;fill-opacity:1">♥ Our Underground Map ♥</tspan></text><g
    id="thameslink">&#10;	<line
    id="thameslink-title-pink"
    class="st10"
@@ -2104,17 +2114,7 @@
   <path class="st17" d="m 265,96.8 c 0.1,0.5 0.6,0.8 1.1,0.8 0.7,0 1.2,-0.5 1.2,-1.2 0,-0.3 -0.1,-0.7 -0.4,-0.9 L 267,95 c 0.5,0.3 0.8,0.8 0.8,1.4 0,0.9 -0.7,1.6 -1.6,1.6 -0.6,0 -1.1,-0.3 -1.4,-0.8 z" id="path345"></path>
   <path class="st17" d="m 266,93.9 c 0,0.3 0.2,0.5 0.5,0.5 0.2,0 0.5,-0.2 0.5,-0.5 0,-0.3 -0.2,-0.5 -0.5,-0.5 -0.2,0 -0.5,0.2 -0.5,0.5" id="path346"></path>
   <path class="st17" d="M 266.3,94.7 V 95 h -1 c 0,0 -0.2,0 -0.2,0.2 0,0.2 0.2,0.2 0.2,0.2 h 0.9 v 0.3 h -1.3 c 0,0 -0.1,0 -0.1,0 0,0 -0.1,0.1 -0.1,0.1 l -0.7,1.4 c 0,0 -0.1,0.2 0.1,0.3 0.2,0.1 0.3,-0.1 0.3,-0.1 l 0.5,-1.1 c 0,0 0,-0.1 0.1,-0.1 0.1,0 0.1,0 0.1,0 h 1.1 c 0,0 0.1,0 0.2,-0.1 0.1,-0.1 0.1,-0.2 0.1,-0.2 l 0.2,-1.2 c 0,0 0,-0.3 -0.3,-0.3 0,0 -0.1,0.3 -0.1,0.3" id="path347"></path>
-  </g>&#10;&#10;<text
-   xml:space="preserve"
-   style="font-size:5.33333px;font-family:njfont;-inkscape-font-specification:'njfont, Normal';fill:#204492;fill-opacity:1"
-   x="103.02348"
-   y="24.190434"
-   id="text1"><tspan
-     sodipodi:role="line"
-     id="tspan1"
-     x="103.02348"
-     y="24.190434"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.3333px;font-family:njfont;-inkscape-font-specification:'njfont, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#204492;fill-opacity:1">♥ Our Underground Map ♥</tspan></text></svg>`
+  </g>&#10;&#10;</svg>`
         const svgContainer = document.getElementById('svg-container');
 const modal = document.getElementById("myModal");
 const modalImg = document.getElementById("img01");
@@ -2123,7 +2123,7 @@ const modalImg = document.getElementById("img01");
 svgContainer.innerHTML = svgCode;
 
 const hideElements = (tubeLine) => {
-    const allElements = document.querySelectorAll(':not(#tspan1):not(#svg-container):not(#tube-lines):not(#border):not(#myModal):not(#img01)');
+    const allElements = document.querySelectorAll(':not(#underground-title):not(#underground-title-text):not(#svg-container):not(#tube-lines):not(#border):not(#myModal):not(#img01)');
 
     allElements.forEach(element => {
       const elementId = element.id;
@@ -2141,7 +2141,7 @@ const hideElements = (tubeLine) => {
 document.body.addEventListener('click', function (event) {
   const clickedElement = event.target;
   const immediateParent = clickedElement.parentNode;
-  const dontActivate = ["tube-lines", "myModal", "svg-container","key","img01","text1"];
+  const dontActivate = ["tube-lines", "myModal", "svg-container","key","img01","underground-title-text","underground-title"];
   const bakerlooLine = ["bakerloo","edgware-road", "marylebone", "baker-street", "regents-park", "oxford-circus", "piccadilly-circus", "charing-cross", "embankment", "waterloo-station", "lambeth-north", "elephant-and-castle"];
   const centralLine = ["central","notting-hill-gate","queensway","lancaster-gate","marble-arch","bond-street","oxford-circus","tottenham-court-road","holborn","chancery-lane","city-thameslink","st-pauls","bank","liverpool-street"];
   const circleLine = ["circle","edgware-road", "baker-street", "great-portland-street", "euston-square", "kings-x","kings-x-disabled-1","kings-x-disabled-2","kings-x-disabled-3", "bank","farringdon","farringdon-disabled-1","farringdon-disabled-2","barbican", "moorgate", "liverpool-street", "liverpool-street-disabled-2", "liverpool-street-disabled-3", "liverpool-street-disabled-4", "aldgate", "tower-hill", "monument", "cannon-street", "mansion-house", "blackfriars", "temple", "embankment", "westminster", "st-james-park", "victoria-station", "sloane-square", "south-kensington", "gloucester-road", "high-street-kensington", "notting-hill-gate", "bayswater", "paddington"];
@@ -2220,7 +2220,7 @@ document.body.addEventListener('click', function (event) {
     hideElements(thamesLink);
   }
 
-  if(parentId === "tube-lines" || parentId === "svg-container"){
+  if(parentId === "tube-lines" || parentId === "svg-container" || parentId === "underground-title"){
     var hiddenElements = document.querySelectorAll('.hidden');
 
 // Remove the "hidden" class from each element
